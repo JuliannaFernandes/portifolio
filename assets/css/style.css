@@ -16,6 +16,7 @@
     #f3f3f3,
     #efefef
   );
+  --ligth-grey: #d3d3d3;
 }
 /* Reset de estilos */
 * {
@@ -38,18 +39,26 @@ html {
   background-image: url(/assets/img/background.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: cover/center;
 }
 
 /* Estilos para o cabeçalho */
 header {
   width: 100%;
-  height: 90px;
+  height: 5em;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-weight: 400;
   margin-bottom: 50px;
+  color: var(--grey);
+  font-weight: 500;
+}
+hr {
+  width: 50%;
+  margin: 5em auto; /* Margens superior e inferior iguais, alinhando a linha no centro horizontalmente */
+  background-color: var(--ligth-grey); /* Cor de fundo da linha horizontal */
+  height: 1px; /* Altura da linha horizontal */
+  border: none; /* Removendo a borda padrão da linha horizontal */
 }
 
 .nav-container,
@@ -64,15 +73,8 @@ header {
   background-color: var(--green);
   color: var(--white);
   padding: 5px 20px;
-  border-radius: 10px;
+  border-radius: 5px;
   text-align: center;
-}
-
-/* Estilos para o conteúdo principal */
-
-.main {
-  width: 100%;
-  height: 100vh;
 }
 
 /* Estilos para o conteúdo dentro do container */
@@ -109,15 +111,24 @@ header {
   text-align: center;
 }
 
+#title-sobre-mim {
+  margin-bottom: 100px;
+  color: var(--grey);
+}
+
 .container-descricao {
   width: 80%;
   background: var(--gradient-white);
   padding: 20px;
   border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .descricao {
-  align-items: center;
+  text-align: start;
   padding: 20px;
-  border-radius: 20px;
 }
