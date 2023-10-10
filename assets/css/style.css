@@ -1,0 +1,123 @@
+/* Import de fontes do Google */
+@import url("https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,300;7..72,400;7..72,500;7..72,600;7..72,700;7..72,800&display=swap");
+
+/* Váriaveis globais */
+:root {
+  --green: #699651;
+  --off-white: #ebebeb;
+  --white: #fff;
+  --black: #000;
+  --grey: #575757;
+  --gradient-white: linear-gradient(
+    to bottom,
+    #ffffff,
+    #fbfbfb,
+    #f7f7f7,
+    #f3f3f3,
+    #efefef
+  );
+}
+/* Reset de estilos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+  font-family: "Literata", "Verdana";
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+}
+
+/* elementos padrão */
+body,
+html {
+  width: 100%;
+  height: 100%;
+  font-family: "Literata", "Verdana", sans-serif;
+  background-image: url(/assets/img/background.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Estilos para o cabeçalho */
+header {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: 400;
+  margin-bottom: 50px;
+}
+
+.nav-container,
+.nav-links {
+  display: flex;
+  padding: 4px 50px;
+}
+
+/* Estilos para os botões */
+#btn-github,
+#btn-downloadCV {
+  background-color: var(--green);
+  color: var(--white);
+  padding: 5px 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Estilos para o conteúdo principal */
+
+.main {
+  width: 100%;
+  height: 100vh;
+}
+
+/* Estilos para o conteúdo dentro do container */
+.conteudo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-height: 100vh;
+  color: var(--grey);
+}
+
+/* Estilos para o container de ícones */
+.container-icons {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 120px;
+}
+
+/* Estilos para os ícones */
+.icon {
+  width: 20px;
+}
+
+.sobre-mim {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  text-align: center;
+}
+
+.container-descricao {
+  width: 80%;
+  background: var(--gradient-white);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.descricao {
+  align-items: center;
+  padding: 20px;
+  border-radius: 20px;
+}
