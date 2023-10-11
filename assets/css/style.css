@@ -102,7 +102,8 @@ hr {
   width: 20px;
 }
 
-.sobre-mim {
+.container-section,
+.skills {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,12 +112,12 @@ hr {
   text-align: center;
 }
 
-#title-sobre-mim {
+.title-section {
   margin-bottom: 100px;
   color: var(--grey);
 }
 
-.container-descricao {
+.section {
   width: 80%;
   background: var(--gradient-white);
   padding: 20px;
