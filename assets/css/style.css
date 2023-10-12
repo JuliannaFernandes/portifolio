@@ -34,37 +34,102 @@
 body,
 html {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   font-family: "Literata", "Verdana", sans-serif;
-  background-image: url(/assets/img/background.png);
-  background-repeat: no-repeat;
+  background-image: url("/assets/img/background.png");
+  background-size: cover;
   background-position: center;
-  background-size: cover/center;
 }
 
 /* Estilos para o cabeçalho */
-header {
+.header {
   width: 100%;
-  height: 5em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1.3rem 10%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 50px;
-  color: var(--grey);
+  z-index: 100;
   font-weight: 500;
 }
-hr {
-  width: 50%;
-  margin: 5em auto; /* Margens superior e inferior iguais, alinhando a linha no centro horizontalmente */
-  background-color: var(--ligth-grey); /* Cor de fundo da linha horizontal */
-  height: 1px; /* Altura da linha horizontal */
-  border: none; /* Removendo a borda padrão da linha horizontal */
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(136, 136, 136, 0.1);
+  backdrop-filter: blur(20px);
+  z-index: -1;
+}
+/* Logotipo */
+.logo {
+  font-size: 2rem;
 }
 
-.nav-container,
-.nav-links {
-  display: flex;
-  padding: 4px 50px;
+/* hr {
+  width: 50%;
+  margin: 5em auto;  Margens superior e inferior iguais, alinhando a linha no centro horizontalmente 
+  background-color: var(--ligth-grey); Cor de fundo da linha horizontal 
+  height: 1px;  Altura da linha horizontal 
+  border: none;  Removendo a borda padrão da linha horizontal 
+} */
+
+/* menu de navegação */
+.navbar a {
+  color: var(--grey);
+  font-size: 1.1rem;
+  margin-left: 2.5rem;
+}
+
+/* icons  */
+.icons {
+  position: absolute;
+  right: 5%;
+  cursor: pointer;
+  font-size: 2rem;
+  color: var(--grey);
+  display: none;
+}
+
+/* Breakpoints */
+@media (max-width: 992px) {
+  .header {
+    padding: 1.3rem 5%;
+  }
+}
+@media (max-width: 768px) {
+  .icons {
+    display: inline-flex;
+  }
+  #check:checked ~ .icons #menu-icon {
+    display: none;
+  }
+
+  #check:checked ~ .icons #close-icon {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 17.7rem;
+    background: rgba(136, 136, 136, 0.1);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  }
+  .navbar a {
+    display: block;
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+    text-align: center;
+  }
 }
 
 /* Estilos para os botões */
