@@ -24,7 +24,6 @@
   padding: 0;
   box-sizing: border-box;
   max-width: 100%;
-  font-family: "Literata", "Verdana";
   text-decoration: none;
   list-style: none;
   color: inherit;
@@ -41,10 +40,13 @@ html {
   background-position: center;
 }
 
+h2 {
+  margin: auto;
+}
+
 /* Estilos para o cabeçalho */
 .header {
   width: 100%;
-  position: fixed;
   top: 0;
   left: 0;
   padding: 1.3rem 10%;
@@ -55,29 +57,17 @@ html {
   font-weight: 500;
 }
 
-.header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(136, 136, 136, 0.1);
-  backdrop-filter: blur(20px);
-  z-index: -1;
-}
 /* Logotipo */
 .logo {
-  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  width: auto;
 }
 
-/* hr {
-  width: 50%;
-  margin: 5em auto;  Margens superior e inferior iguais, alinhando a linha no centro horizontalmente 
-  background-color: var(--ligth-grey); Cor de fundo da linha horizontal 
-  height: 1px;  Altura da linha horizontal 
-  border: none;  Removendo a borda padrão da linha horizontal 
-} */
+.logo img {
+  width: auto;
+}
 
 /* menu de navegação */
 .navbar a {
@@ -86,89 +76,53 @@ html {
   margin-left: 2.5rem;
 }
 
-/* icons  */
-.icons {
-  position: absolute;
-  right: 5%;
-  cursor: pointer;
-  font-size: 2rem;
-  color: var(--grey);
-  display: none;
-}
-
-/* Breakpoints */
-@media (max-width: 992px) {
-  .header {
-    padding: 1.3rem 5%;
-  }
-}
-@media (max-width: 768px) {
-  .icons {
-    display: inline-flex;
-  }
-  #check:checked ~ .icons #menu-icon {
-    display: none;
-  }
-
-  #check:checked ~ .icons #close-icon {
-    display: block;
-  }
-
-  .navbar {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 17.7rem;
-    background: rgba(136, 136, 136, 0.1);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  }
-  .navbar a {
-    display: block;
-    font-size: 1.1rem;
-    margin: 1.5rem 0;
-    text-align: center;
-  }
-}
-
 /* Estilos para os botões */
 #btn-github,
 #btn-downloadCV {
   background-color: var(--green);
   color: var(--white);
-  padding: 5px 20px;
+  padding: 5px 10px;
   border-radius: 5px;
   text-align: center;
 }
 
 /* Estilos para o conteúdo dentro do container */
 .conteudo {
+  text-align: center;
+  min-height: calc(
+    100vh - 80px
+  ); /* 100vh da tela menos a altura do cabeçalho */
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   max-height: 100vh;
   color: var(--grey);
 }
 
+#foto {
+  margin: auto;
+}
+
 /* Estilos para o container de ícones */
 .container-icons {
   width: 100%;
+  padding: 1.3rem 5%;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: space-around;
   align-items: center;
-  margin-top: 120px;
+  margin-top: auto;
+  cursor: pointer;
 }
 
 /* Estilos para os ícones */
 .icon {
-  width: 20px;
+  margin: 0 10px;
+  width: 1.5rem;
 }
 
-.container-section,
-.skills {
+.container-section {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -177,12 +131,40 @@ html {
   text-align: center;
 }
 
-.title-section {
-  margin-bottom: 100px;
-  color: var(--grey);
+/* Conhecimentos */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.section {
+.section-skills,
+.container-projects {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container-linguagens,
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  flex-grow: 1;
+  text-align: center;
+  margin: 30px;
+  padding: 10px;
+  border-radius: 10px;
+  background: var(--gradient-white);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.container-linguagens i[class^="bx"] {
+  font-size: 7em;
+  margin-bottom: 1rem;
+}
+.container {
   width: 80%;
   background: var(--gradient-white);
   padding: 20px;
@@ -197,4 +179,35 @@ html {
 .descricao {
   text-align: start;
   padding: 20px;
+}
+
+/* Breakpoints */
+@media (max-width: 992px) {
+  .header {
+    padding: 1.3rem 5%;
+  }
+  .container-icons {
+    margin-top: auto;
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    width: 100%;
+    height: 80px;
+    padding: 1.3rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+  }
+
+  .navbar a {
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin: 1.5rem 0;
+    text-align: center;
+  }
+  #btn-github {
+    padding: 5px;
+  }
 }
