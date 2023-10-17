@@ -38,10 +38,7 @@ html {
   background-image: url("/assets/img/background.png");
   background-size: cover;
   background-position: center;
-}
-
-h2 {
-  margin: auto;
+  scroll-behavior: smooth;
 }
 
 /* Estilos para o cabeçalho */
@@ -56,6 +53,15 @@ h2 {
   z-index: 100;
   font-weight: 500;
 }
+h2,
+#foto {
+  margin: auto;
+}
+#foto img:hover {
+  transform: scale(1.05);
+  transition: 0.6s ease-in-out;
+  cursor: pointer;
+}
 
 /* Logotipo */
 .logo {
@@ -63,6 +69,7 @@ h2 {
   align-items: center;
   vertical-align: middle;
   width: auto;
+  cursor: pointer;
 }
 
 .logo img {
@@ -71,9 +78,29 @@ h2 {
 
 /* menu de navegação */
 .navbar a {
+  position: relative;
   color: var(--grey);
   font-size: 1.1rem;
   margin-left: 2.5rem;
+}
+
+.navbar a::after {
+  position: absolute;
+  content: " ";
+  width: 0%;
+  height: 2px;
+  background-color: var(--green);
+  bottom: 0;
+  left: 0;
+  transition: 0.8s ease-in-out;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+.navbar a::after:visited {
+  width: 100%;
 }
 
 /* Estilos para os botões */
@@ -100,10 +127,6 @@ h2 {
   color: var(--grey);
 }
 
-#foto {
-  margin: auto;
-}
-
 /* Estilos para o container de ícones */
 .container-icons {
   width: 100%;
@@ -113,13 +136,13 @@ h2 {
   justify-content: space-around;
   align-items: center;
   margin-top: auto;
-  cursor: pointer;
 }
 
 /* Estilos para os ícones */
-.icon {
+.container-icons a i {
   margin: 0 10px;
-  width: 1.5rem;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 .container-section {
@@ -132,11 +155,8 @@ h2 {
 }
 
 /* Conhecimentos */
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-}
 
+.skills,
 .section-skills,
 .container-projects {
   display: flex;
@@ -160,10 +180,21 @@ h2 {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+.project:hover {
+  transform: scale(1.05);
+  transition: 0.6s;
+  cursor: pointer;
+}
+
 .container-linguagens i[class^="bx"] {
   font-size: 7em;
   margin-bottom: 1rem;
 }
+
+.container-linguagens:hover {
+  background-color: #575757;
+}
+
 .container {
   width: 80%;
   background: var(--gradient-white);
@@ -179,6 +210,31 @@ h2 {
 .descricao {
   text-align: start;
   padding: 20px;
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--green);
+  color: var(--off-white);
+  min-height: 100px;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+}
+
+hr {
+  width: 30%;
+}
+
+.contato {
+  font-size: 2rem;
+}
+
+.contato i {
+  padding: 0.5rem;
 }
 
 /* Breakpoints */
