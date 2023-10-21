@@ -44,6 +44,7 @@ html {
 /* Estilos para o cabeçalho */
 .header {
   width: 100%;
+  position: fixed;
   top: 0;
   left: 0;
   padding: 1.3rem 10%;
@@ -53,14 +54,21 @@ html {
   z-index: 100;
   font-weight: 500;
 }
+
+.header::before {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(212, 212, 212, 0.2);
+  backdrop-filter: blur(40px);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 h2,
 #foto {
   margin: auto;
-}
-#foto img:hover {
-  transform: scale(1.05);
-  transition: 0.6s ease-in-out;
-  cursor: pointer;
 }
 
 /* Logotipo */
@@ -95,30 +103,50 @@ h2,
   transition: 0.8s ease-in-out;
 }
 
-.navbar a:hover::after {
+.navbar a:not([id]) :hover::after {
   width: 100%;
 }
 
 .navbar a::after:visited {
   width: 100%;
 }
+#btn-github {
+  content: none;
+}
 
 /* Estilos para os botões */
 #btn-github,
-#btn-downloadCV {
+#btn-download-curriculo {
   background-color: var(--green);
   color: var(--white);
-  padding: 5px 10px;
+  padding: 3px 10px;
   border-radius: 5px;
   text-align: center;
+  transition: 0.5s ease-in-out;
+}
+
+#btn-github:hover,
+#btn-download-curriculo:hover {
+  box-shadow: 0 0 40px #88cc64;
+}
+
+#check {
+  display: none;
+}
+
+.iconResponsive {
+  position: absolute;
+  color: var(--green);
+  right: 5%;
+  font-size: 2.5rem;
+  cursor: pointer;
+  display: none;
 }
 
 /* Estilos para o conteúdo dentro do container */
 .conteudo {
   text-align: center;
-  min-height: calc(
-    100vh - 80px
-  ); /* 100vh da tela menos a altura do cabeçalho */
+  min-height: 100vh; /* 100vh da tela menos a altura do cabeçalho */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -150,7 +178,7 @@ h2,
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  height: 00vh;
   text-align: center;
 }
 
@@ -257,13 +285,59 @@ hr {
     font-weight: 500;
   }
 
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    background: rgba(212, 212, 212, 0.2);
+    backdrop-filter: blur(40px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+  }
+
   .navbar a {
-    padding: 0.5rem;
-    font-size: 1rem;
+    display: block;
+    font-size: 1.1rem;
     margin: 1.5rem 0;
     text-align: center;
+    transform: translateY(-50);
+    transition: 0.3s ease;
   }
+
+  #check:checked ~ navbar {
+    height: 17.7rem;
+  }
+
+  #check:checked ~ navbar a {
+    transform: translateY(0);
+  }
+
   #btn-github {
-    padding: 5px;
+    background: none;
+    position: relative;
+    color: var(--grey);
+    font-size: 1.1rem;
+    transition: none;
+  }
+  #btn-github:hover {
+    box-shadow: none;
+  }
+  .iconResponsive {
+    display: inline-flex;
+  }
+
+  #check:checked ~ .iconResponsive #menu-icon {
+    display: none;
+  }
+
+  #check:not(:checked) ~ .iconResponsive #close-icon {
+    display: none;
+  }
+
+  #check:checked ~ .iconResponsive #close-icon {
+    display: block;
   }
 }

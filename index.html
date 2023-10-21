@@ -9,6 +9,7 @@
     />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="assets/css/style.css" />   
+    <script defer src="/assets/js/script.js"></script>
     <title>Julianna Fernandes</title>
   </head>
   <body>
@@ -16,17 +17,24 @@
     <header class="header">
       <div class="logo"><img src="assets/img/logo_header.png" alt="Logo de Julianna Fernandes" /></div>
 
+      <input type="checkbox" id="check">
+      <label for="check" class="iconResponsive">
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <i class='bx bx-x' id="close-icon"></i>
+      </label>
+      
 
       <nav class="navbar">
-         <a href="#about">Sobre mim</a>
-         <a href="#skills">Conhecimentos</a>
-         <a href="#projects">Projetos</a>
-         <a href="https://github.com/JuliannaFernandes" id="btn-github">GitHub</a>
+         <a href="#home" style="--i:0;">Início</a>
+         <a href="#about" style="--i:1;">Sobre mim</a>
+         <a href="#skills" style="--i:2;">Conhecimentos</a>
+         <a href="#projects" style="--i:3;">Projetos</a>
+         <a id="btn-github" href="https://github.com/JuliannaFernandes" target="_blank" style="--i:3;">GitHub</a>
       </nav>
 
       
     </header>
-
+      <a id="home"></a>
       <div class="conteudo">
         <div id="foto">
           <img
@@ -35,13 +43,6 @@
           />
           <h2 id="name">Julianna Fernandes</h2>
           <br />
-        </div>
-
-        <div class="container-icons">
-          <a href="https://github.com/JuliannaFernandes" target="_blank"><i class='bx bxl-github' style='color:#96A88D'  ></i></a>
-          <a href="https://www.instagram.com/jufernds_/" target="_blank"><i class='bx bxl-instagram' style='color:#96A88D' ></i></a>
-          <a href="https://www.linkedin.com/in/julianna-fernandes/" target="_blank"><i class='bx bxl-linkedin' style='color:#96A88D' ></i></a>
-          <a href="https://api.whatsapp.com/send?phone=5511978630612&text=Ol%C3%A1,%20tudo%20bem%20com%20voc%C3%AA?" target="_blank"><i class='bx bxl-whatsapp' style='color:#96A88D' ></i></a>
         </div>
       </div>
 
@@ -58,7 +59,7 @@
           </p>
           <br /><br />
 
-          <a id="btn-downloadCV" href="#">Download CV</a>
+          <a id="btn-download-curriculo" href="#" target="_blank">Download CV</a>
         </div>
         <div id="avatar">
           <img src="assets/img/Avatar.png" alt="Avatar Julianna Fernandes" />
