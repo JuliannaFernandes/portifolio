@@ -270,8 +270,15 @@ hr {
   .header {
     padding: 1.3rem 5%;
   }
+  .navbar a {
+    font-size: 1rem;
+    margin-left: 2rem;
+  }
   .container-icons {
     margin-top: auto;
+  }
+  .skills {
+    flex-grow: 2;
   }
 }
 @media (max-width: 768px) {
@@ -307,14 +314,6 @@ hr {
     transition: 0.3s ease;
   }
 
-  #check:checked ~ navbar {
-    height: 17.7rem;
-  }
-
-  #check:checked ~ navbar a {
-    transform: translateY(0);
-  }
-
   #btn-github {
     background: none;
     position: relative;
@@ -329,15 +328,12 @@ hr {
     display: inline-flex;
   }
 
-  #check:checked ~ .iconResponsive #menu-icon {
-    display: none;
-  }
-
   #check:not(:checked) ~ .iconResponsive #close-icon {
     display: none;
   }
-
-  #check:checked ~ .iconResponsive #close-icon {
-    display: block;
+}
+@media (max-width: 368px) {
+  .conteudo {
+    height: 100vh;
   }
 }
