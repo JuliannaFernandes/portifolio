@@ -23,5 +23,6 @@ links.forEach((link) => {
     navbar.style.height = "0";
     menuIcon.style.display = "block";
     closeIcon.style.display = "none";
+    checkbox.checked = false;
   });
 });
