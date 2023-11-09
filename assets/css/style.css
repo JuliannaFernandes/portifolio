@@ -50,7 +50,6 @@ html {
   padding: 1.3rem 10%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   z-index: 100;
   font-weight: 500;
 }
@@ -60,12 +59,13 @@ html {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(212, 212, 212, 0.2);
-  backdrop-filter: blur(40px);
+  background: var(--white);
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
   top: 0;
   left: 0;
   z-index: -1;
 }
+
 h2,
 #foto {
   margin: auto;
@@ -89,7 +89,9 @@ h2,
   position: relative;
   color: var(--grey);
   font-size: 1.1rem;
-  margin-left: 2.5rem;
+  margin: 0 1rem; /* Ajuste as margens conforme necessário */
+  padding: 1rem 0; /* Ajuste o espaçamento conforme necessário */
+  transition: 0.3s ease;
 }
 
 .navbar a::after {
@@ -153,6 +155,7 @@ h2,
   justify-content: center;
   max-height: 100vh;
   color: var(--grey);
+  visibility: hidden;
 }
 
 /* Estilos para o container de ícones */
@@ -178,11 +181,16 @@ h2,
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 00vh;
+  height: 100vh;
   text-align: center;
 }
 
 /* Conhecimentos */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 .skills,
 .section-skills,
@@ -223,7 +231,7 @@ h2,
   background-color: #575757;
 }
 
-.container {
+.container-sobre {
   width: 80%;
   background: var(--gradient-white);
   padding: 20px;
@@ -244,6 +252,7 @@ h2,
 
 footer {
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: space-around;
   background-color: var(--green);
@@ -278,7 +287,12 @@ hr {
     margin-top: auto;
   }
   .skills {
-    flex-grow: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .project {
+    flex-grow: 1;
   }
 }
 @media (max-width: 768px) {
@@ -299,8 +313,7 @@ hr {
     height: 0;
     overflow: hidden;
     width: 100%;
-    background: rgba(212, 212, 212, 0.2);
-    backdrop-filter: blur(40px);
+    background: var(--white);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
     transition: 0.3s ease;
   }
@@ -321,6 +334,15 @@ hr {
     font-size: 1.1rem;
     transition: none;
   }
+  .container-sobre {
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container-sobre img {
+    width: 200px;
+  }
   #btn-github:hover {
     box-shadow: none;
   }
@@ -333,7 +355,27 @@ hr {
   }
 }
 @media (max-width: 368px) {
-  .conteudo {
-    height: 100vh;
+  .header {
+    padding: 1.3rem 5%;
+    height: auto;
+  }
+
+  .navbar a {
+    font-size: 1rem;
+    margin: 1rem 0;
+  }
+
+  .iconResponsive {
+    display: inline-flex;
+  }
+
+  .container-sobre {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .skills,
+  .project {
+    width: 100%;
   }
 }

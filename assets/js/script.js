@@ -4,6 +4,14 @@ const links = document.querySelectorAll(".navbar a ");
 const menuIcon = document.getElementById("menu-icon");
 const closeIcon = document.getElementById("close-icon");
 
+/* ScrollReveal */
+
+window.sr = ScrollReveal({ reset: true });
+
+sr.reveal(".conteudo", { duration: 1000 });
+
+/* Função para exibir/recolher menu responsivo */
+
 checkbox.addEventListener("change", function () {
   if (checkbox.checked) {
     navbar.style.height = "17.7rem";
