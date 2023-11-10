@@ -2,7 +2,7 @@
 
 ![imagem do projeto](https://github.com/JuliannaFernandes/portifolio/assets/110785939/f072b8f8-c8db-457f-9f54-71179ad84440)
 
-<h3 align="center"><a href="https://juliannafernandes.vercel.app/">Confira o projeto aqui</a></h2>
+<h3 align="center"><a href="https://juliannafernandes.vercel.app/" target="_blank">Confira o projeto aqui</a></h2>
 
 
 
