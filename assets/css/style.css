@@ -346,28 +346,3 @@ hr {
     display: none;
   }
 }
-@media (max-width: 368px) {
-  .header {
-    padding: 1.3rem 5%;
-    height: 4rem;
-  }
-
-  .navbar a {
-    font-size: 1rem;
-    margin: 1rem 0;
-  }
-
-  .iconResponsive {
-    display: inline-flex;
-  }
-
-  .container-sobre {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .skills,
-  .project {
-    width: 100%;
-  }
-}
