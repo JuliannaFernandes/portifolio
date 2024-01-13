@@ -360,6 +360,17 @@ hr {
     display: none;
   }
 }
+
+@media screen and (max-width: 480px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    transition: all 0.5s;
+  }
+}
 @media screen and (max-width: 368px) {
   body {
     font-size: 0.8em;
